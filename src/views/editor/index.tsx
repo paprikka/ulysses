@@ -7,23 +7,23 @@ import { fromEvent, timer } from 'rxjs'
 import { switchMap, mapTo, merge, distinctUntilChanged } from 'rxjs/operators'
 import { UserSettings, Action } from '../../reducers/user-settings';
 
-const initialText = localStorage.getItem('ulysses::lastText') || ''
-
-const saveChanges = (text: string) => localStorage.setItem('ulysses::lastText', text)
-
 export interface EditorViewProps {
     state: UserSettings,
     dispatch: Dispatch<Action>
 }
 export const EditorView = ({state, dispatch} : EditorViewProps) => {
-    const [text, setText] = useState(initialText)
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
     const toggleUITimeout = 2000 
+    const { text } = state
+
+    const setText = (text: string) => dispatch({
+        type: 'user:set-text',
+        text
+    })
 
     const onInputChange = (value: string) => {
         setText(value)
-        saveChanges(value)
         if(isUIVisible) setIsUIVisible(false)
     }
 
