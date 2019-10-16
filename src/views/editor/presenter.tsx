@@ -5,7 +5,7 @@ import { Toolbar } from '../../components/toolbar'
 import { ToolbarButton } from '../../components/toolbar-button'
 import { Icon } from '../../components/icon';
 import { Icons } from '../../components/icons'
-
+import classNames from 'classnames'
 
 const preventEvent = (e: React.SyntheticEvent) => e.preventDefault()
 
@@ -39,6 +39,8 @@ export const EditorViewPresenter = ({
 } : EditorViewPresenterProps) => {
     const inputEl: React.MutableRefObject<HTMLTextAreaElement | null> = useRef(null)
 
+    const wordCount = value.trim().split(/\s+/).length
+    
     const onInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
         onChange(e.currentTarget.value)
 
@@ -79,6 +81,10 @@ export const EditorViewPresenter = ({
                 onChange={ onInputChange }
             />
         </div>
+        <span className={classNames({
+            'editor__word-count': true,
+            'editor__word-count--active': isUIVisible
+        })}>{wordCount}</span>
         <Toolbar isVisible={isUIVisible}>
             <ToolbarButton onClick={onDownloadClick}>
                 <Icon source={Icons.save}/>

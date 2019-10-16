@@ -46,7 +46,7 @@
     
     line-height: calc(var(--ru) * 1rem);
     font-size: 1rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: var(--font-base);
 
     resize: none;
     user-select: none;
@@ -59,4 +59,17 @@
 .editor__input::selection {
     background: rgba(0, 0, 0, .85);
     color: white;
+}
+
+.editor__word-count {
+    position: absolute;
+    right: var(--page-margin);
+    bottom: var(--page-margin);
+
+    opacity: 0.2;
+    transition: .4s opacity;
+}
+
+.editor__word-count--active {
+    opacity: .5;
 }

@@ -4,6 +4,9 @@
   --page-color: #fafafa;
   --page-color-transparent: #fafafa99;
 
+  --page-margin: calc(var(--ru) * 2rem);
+  --font-base: Georgia, 'Times New Roman', Times, serif;
+
   --default-anim-easing: cubic-bezier(0.190, 1.000, 0.220, 1.000)
 }
 
@@ -22,9 +25,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
