@@ -39,7 +39,7 @@ export const EditorView = () => {
             const sub = hide$
                 .pipe(
                     merge(initialHide$, show$),
-                    // distinctUntilChanged()
+                    distinctUntilChanged()
                 ).subscribe(setIsUIVisible)
 
             return () => sub.unsubscribe()
