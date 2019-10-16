@@ -8,6 +8,8 @@
     justify-content: center;
 
     padding: 2rem;
+
+    transition: .3s background-color;
 }
 
 
@@ -20,19 +22,33 @@
     top: calc(var(--ru) * -2.5rem)
 }
 
-.editor__content::after {
+.editor__overlay {
     content: '';
     position: absolute;
-    background: linear-gradient(
-        var(--page-color),
-        var(--page-color-transparent)
-    );
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
 
+    height: calc(var(--ru) * 4rem);
     top: 0;
     right: 0;
     left: 0;
-    height: calc(var(--ru) * 4rem);
+
 }
+
+.editor__overlay span {
+    display: block;
+    background-color: var(--page-color);
+    height: calc(var(--ru) * 1rem);
+    width: 100%;
+
+    transition: .3s background-color;
+}
+
+.editor__overlay span:nth-child(1) { opacity: .98; }
+.editor__overlay span:nth-child(2) { opacity: .92; }
+.editor__overlay span:nth-child(3) { opacity: .85; }
+.editor__overlay span:nth-child(4) { opacity: .75; }
 
 .editor__input {
     width: 100%;

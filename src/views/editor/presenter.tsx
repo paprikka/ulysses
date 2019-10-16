@@ -82,6 +82,12 @@ export const EditorViewPresenter = ({
                 value={getFormattedText(value)}
                 onChange={ onInputChange }
             />
+            <div className='editor__overlay'>
+                <span />
+                <span />
+                <span />
+                <span />
+            </div>
         </div>
         <span className={classNames({
             'editor__word-count': true,
