@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon-sun</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Editor" transform="translate(-593.000000, -720.000000)" fill="#111918" fill-rule="nonzero">
+            <g id="Nav" transform="translate(481.000000, 720.000000)">
+                <path d="M125,5 C120.589,5 117,8.589 117,13 C117,17.411 120.589,21 125,21 C129.411,21 133,17.411 133,13 C133,8.589 129.411,5 125,5 Z M125,19 C121.691,19 119,16.309 119,13 C119,9.691 121.691,7 125,7 C128.309,7 131,9.691 131,13 C131,16.309 128.309,19 125,19 Z M124,23 L126,23 L126,26 L124,26 L124,23 Z M126,3 L124,3 L124,0 L126,0 L126,3 Z M138,12 L138,14 L135,14 L135,12 L138,12 Z M112,12 L115,12 L115,14 L112,14 L112,12 Z M132.778,19.364 L134.899,21.485 L133.485,22.899 L131.364,20.778 L132.778,19.364 Z M117.222,6.636 L115.101,4.515 L116.515,3.1 L118.636,5.221 L117.222,6.636 Z M133.485,3.1 L134.899,4.514 L132.778,6.635 L131.364,5.221 L133.485,3.1 Z M117.222,19.364 L118.636,20.778 L116.515,22.899 L115.101,21.485 L117.222,19.364 Z" id="sun"></path>
+            </g>
+        </g>
+    </g>
+</svg>

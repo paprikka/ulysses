@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon-save</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Editor" transform="translate(-481.000000, -720.000000)" fill="#111918" fill-rule="nonzero">
+            <g id="Nav" transform="translate(481.000000, 720.000000)">
+                <path d="M12,11.414 L7.293,6.707 L8.707,5.293 L11,7.586 L11,0 L13,0 L13,7.586 L15.293,5.293 L16.707,6.707 L12,11.414 Z M22,18 L22,22 L2,22 L2,18 L0,18 L0,24 L24,24 L24,18 L22,18 Z M20,18 L4,18 L4,20 L20,20 L20,18 Z M20,14 L4,14 L4,16 L20,16 L20,14 Z" id="save"></path>
+            </g>
+        </g>
+    </g>
+</svg>

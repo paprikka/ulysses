@@ -1,0 +1,22 @@
+.toolbar-button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: calc(var(--ru) * 2rem);
+
+    opacity: .5;
+
+    transition: .3s opacity, .3s transform;
+
+    cursor: pointer;
+}
+
+
+.toolbar-button:hover {
+    opacity: 1;
+}
+
+.toolbar-button:active {
+    opacity: 1;
+    transform: scale(.95);
+}
