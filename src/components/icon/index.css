@@ -4,3 +4,7 @@
     height: 1em;
     background-size: 100%;
 }
+
+.theme--dark .icon {
+    filter: invert(100%);
+}

@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Dispatch } from 'react';
 import './index.css';
 import { getFilename } from './get-filename'
 import { download } from './download'
 import { EditorViewPresenter } from './presenter'
 import { fromEvent, timer } from 'rxjs'
 import { switchMap, mapTo, merge, distinctUntilChanged } from 'rxjs/operators'
+import { UserSettings, Action } from '../../reducers/user-settings';
 
 const initialText = localStorage.getItem('ulysses::lastText') || ''
 
 const saveChanges = (text: string) => localStorage.setItem('ulysses::lastText', text)
 
-
-export const EditorView = () => {
+export interface EditorViewProps {
+    state: UserSettings,
+    dispatch: Dispatch<Action>
+}
+export const EditorView = ({state, dispatch} : EditorViewProps) => {
     const [text, setText] = useState(initialText)
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
@@ -24,6 +28,11 @@ export const EditorView = () => {
     }
 
     const onDownloadClick = () => download(getFilename(), text)
+    const toggleTheme = () =>
+        dispatch({
+            type: 'user:change-theme',
+            theme: state.theme === 'dark' ? 'default' : 'dark'
+        })
 
     useEffect(
         () => {
@@ -53,6 +62,7 @@ export const EditorView = () => {
         
         onChange={onInputChange}
         onDownloadClick={onDownloadClick}
+        onToggleThemeClick={toggleTheme}
         onInputFocusedChange={setInputFocused}
     />
 }

@@ -1,0 +1,13 @@
+.theme--default {
+    --page-color: #fafafa;
+    --page-color-transparent: #fafafa99;
+
+    --font-color: #333;
+}
+
+.theme--dark {
+    --page-color: #212121;
+    --page-color-transparent: #21212199;
+
+    --font-color: #E3DAC4;
+}

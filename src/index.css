@@ -1,10 +1,8 @@
 :root {
   --ru: 1.6;
   --font-size: 20px;
-  --page-color: #fafafa;
-  --page-color-transparent: #fafafa99;
-
   --page-margin: calc(var(--ru) * 2rem);
+  
   --font-base: Georgia, 'Times New Roman', Times, serif;
 
   --default-anim-easing: cubic-bezier(0.190, 1.000, 0.220, 1.000)
@@ -28,4 +26,6 @@ body {
   font-family: var(--font-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: var(--font-color);
 }
