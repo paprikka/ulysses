@@ -2,11 +2,15 @@ import React, { useReducer } from 'react';
 import './App.css';
 import { EditorView } from './views/editor'
 
-import { userSettingsReducer } from './reducers/user-settings'
+import { userSettingsReducer, UserSettings } from './reducers/user-settings'
 import { Theme } from './components/theme';
 
+const initialState: UserSettings = {
+  theme: 'default'
+}
+
 function App() {
-  const [state, dispatch] = useReducer(userSettingsReducer, { theme: 'dark' })
+  const [state, dispatch] = useReducer(userSettingsReducer, initialState)
 
 
   return (

@@ -10,10 +10,7 @@ export interface UserSettings {
     theme: UserSettingsTheme
 }
 
-const initialState: UserSettings = {
-    theme: 'default'
-}
-export const userSettingsReducer = (state: UserSettings = initialState, action: Action) => {
+export const userSettingsReducer = (state: UserSettings, action: Action) => {
     switch(action.type) {
         case 'user:change-theme':
             return {...state, theme: action.theme}
