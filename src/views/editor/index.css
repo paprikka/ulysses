@@ -17,6 +17,7 @@
     max-width: 30rem;
 
     position: relative;
+    top: calc(var(--ru) * -2.5rem)
 }
 
 .editor__content::after {
