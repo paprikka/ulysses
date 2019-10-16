@@ -26,14 +26,16 @@ interface EditorViewPresenterProps {
     isInputFocused: boolean,
     onInputFocusedChange: (isFocused: boolean) => void,
     onChange: (text: string) => void,
-    onDownloadClick: () => void
+    onDownloadClick: () => void,
+    isUIVisible: boolean
 }
 export const EditorViewPresenter = ({
     value,
     isInputFocused,
     onChange,
     onInputFocusedChange,
-    onDownloadClick
+    onDownloadClick,
+    isUIVisible
 } : EditorViewPresenterProps) => {
     const inputEl: React.MutableRefObject<HTMLTextAreaElement | null> = useRef(null)
 
@@ -77,8 +79,7 @@ export const EditorViewPresenter = ({
                 onChange={ onInputChange }
             />
         </div>
-
-        <Toolbar>
+        <Toolbar isVisible={isUIVisible}>
             <ToolbarButton onClick={onDownloadClick}>
                 <Icon source={Icons.save}/>
             </ToolbarButton>

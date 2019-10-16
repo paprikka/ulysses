@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import './index.css'
-import { ToolbarButtonProps } from '../toolbar-button'
+import classNames from 'classnames'
 
+export interface ToolbarProps {
+    children: ReactElement | ReactElement[],
+    isVisible: boolean
+}
 
-export interface ToolbarProps { children: React.ReactChildren }
-
-export const Toolbar: React.FunctionComponent<ToolbarButtonProps> = ({children}) =>
-    <div className='toolbar' children={children} />
+export const Toolbar: React.FunctionComponent<ToolbarProps> = ({children, isVisible}) =>
+    <div
+        className={classNames({toolbar: true, 'toolbar--hidden': !isVisible})}
+        children={children}
+    />

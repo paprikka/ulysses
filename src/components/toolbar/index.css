@@ -1,8 +1,14 @@
 .toolbar {
     position: absolute;
     bottom: calc(var(--ru) * 2rem);
+    transition: 1s opacity var(--default-anim-easing), 1s transform var(--default-anim-easing);
 }
 
 .toolbar .toolbar-button {
     margin: 0 .5rem
+}
+
+.toolbar--hidden {
+    opacity: 0;
+    transform: translate(0, .75rem);
 }
