@@ -20,3 +20,7 @@
     opacity: 1;
     transform: scale(.95);
 }
+
+.toolbar-button:focus {
+    outline: none;
+}
