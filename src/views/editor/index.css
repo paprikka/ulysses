@@ -67,17 +67,14 @@
     color: var(--font-color);
 
     resize: none;
-    user-select: none;
+    user-select: text;
 }
 
 .editor__input:focus { 
     outline: none !important;
 }
 
-.editor__input::selection {
-    background: rgba(0, 0, 0, .85);
-    color: white;
-}
+.editor__input::selection { background: transparent; }
 
 .editor__word-count {
     position: absolute;
