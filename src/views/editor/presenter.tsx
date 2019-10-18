@@ -27,6 +27,7 @@ interface EditorViewPresenterProps {
     onInputFocusedChange: (isFocused: boolean) => void,
     onChange: (text: string) => void,
     onDownloadClick: () => void,
+    onRemoveClick: () => void,
     onToggleThemeClick: () => void,
     isUIVisible: boolean
 }
@@ -36,6 +37,7 @@ export const EditorViewPresenter = ({
     onChange,
     onInputFocusedChange,
     onDownloadClick,
+    onRemoveClick,
     onToggleThemeClick,
     isUIVisible
 } : EditorViewPresenterProps) => {
@@ -96,6 +98,9 @@ export const EditorViewPresenter = ({
         <Toolbar isVisible={isUIVisible}>
             <ToolbarButton onClick={onDownloadClick}>
                 <Icon source={Icons.save}/>
+            </ToolbarButton>
+            <ToolbarButton onClick={onRemoveClick}>
+                <Icon source={Icons.remove}/>
             </ToolbarButton>
             <ToolbarButton onClick={onToggleThemeClick}>
                 <Icon source={Icons.sun}/>

@@ -14,7 +14,7 @@ export interface EditorViewProps {
 export const EditorView = ({state, dispatch} : EditorViewProps) => {
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
-    const toggleUITimeout = 2000 
+    const toggleUITimeout = 2000000 
     const { text } = state
 
     const setText = (text: string) => dispatch({
@@ -28,6 +28,13 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
     }
 
     const onDownloadClick = () => download(getFilename(), text)
+
+    const onRemoveClick = () => {
+        if(window.confirm('Are you sure you want to remove this note?')) {
+            onInputChange('')
+        }
+    }
+    
     const toggleTheme = () =>
         dispatch({
             type: 'user:change-theme',
@@ -62,6 +69,7 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
         
         onChange={onInputChange}
         onDownloadClick={onDownloadClick}
+        onRemoveClick={onRemoveClick}
         onToggleThemeClick={toggleTheme}
         onInputFocusedChange={setInputFocused}
     />
