@@ -1,7 +1,7 @@
 :root {
   --ru: 1.6;
   --font-size: 20px;
-  --page-margin: calc(var(--ru) * 2rem);
+  --page-margin: calc(var(--ru) * 1rem);
   
   --font-base: Georgia, 'Times New Roman', Times, serif;
 

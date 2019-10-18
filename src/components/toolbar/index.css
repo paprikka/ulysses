@@ -1,15 +1,28 @@
 .toolbar {
     position: absolute;
-    bottom: var(--page-margin);
+    top: var(--page-margin);
+    left: var(--page-margin);
+    right: var(--page-margin);
+    display: flex;
     transition: 1s opacity var(--default-anim-easing), 1s transform var(--default-anim-easing);
-    transform: translate(0, 50%);
+    /* transform: translate(0, 50%); */
+
 }
 
 .toolbar .toolbar-button {
     margin: 0 .5rem
 }
 
+.toolbar .toolbar-button:first-child {
+    margin-left: 0;
+}
+
+.toolbar .toolbar-button:last-child {
+    margin-right: 0;
+}
+
+
 .toolbar--hidden:not(:hover) {
     opacity: 0;
-    transform: translate(0, .75rem);
+    transform: translate(0, -.75rem);
 }

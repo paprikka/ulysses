@@ -7,6 +7,7 @@ import { Icon } from '../../components/icon';
 import { Icons } from '../../components/icons'
 import classNames from 'classnames'
 import { UserSettingsTheme } from '../../reducers/user-settings'
+import { Spacer } from '../../components/spacer'
 
 const preventEvent = (e: React.SyntheticEvent) => e.preventDefault()
 
@@ -105,6 +106,7 @@ export const EditorViewPresenter = ({
             <ToolbarButton onClick={onRemoveClick}>
                 <Icon source={Icons.remove}/>
             </ToolbarButton>
+            <Spacer/>
             <ToolbarButton onClick={onToggleThemeClick}>
                 <Icon source={theme === 'dark' ? Icons.moon : Icons.sun}/>
             </ToolbarButton>
