@@ -14,7 +14,7 @@ export interface EditorViewProps {
 export const EditorView = ({state, dispatch} : EditorViewProps) => {
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
-    const toggleUITimeout = 2000000 
+    const toggleUITimeout = 2000
     const { text } = state
 
     const setText = (text: string) => dispatch({
