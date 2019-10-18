@@ -6,6 +6,7 @@ import { ToolbarButton } from '../../components/toolbar-button'
 import { Icon } from '../../components/icon';
 import { Icons } from '../../components/icons'
 import classNames from 'classnames'
+import { UserSettingsTheme } from '../../reducers/user-settings'
 
 const preventEvent = (e: React.SyntheticEvent) => e.preventDefault()
 
@@ -23,6 +24,7 @@ const getFormattedText = (text = '') => {
 
 interface EditorViewPresenterProps {
     value: string,
+    theme: UserSettingsTheme,
     isInputFocused: boolean,
     onInputFocusedChange: (isFocused: boolean) => void,
     onChange: (text: string) => void,
@@ -33,6 +35,7 @@ interface EditorViewPresenterProps {
 }
 export const EditorViewPresenter = ({
     value,
+    theme,
     isInputFocused,
     onChange,
     onInputFocusedChange,
@@ -103,7 +106,7 @@ export const EditorViewPresenter = ({
                 <Icon source={Icons.remove}/>
             </ToolbarButton>
             <ToolbarButton onClick={onToggleThemeClick}>
-                <Icon source={Icons.sun}/>
+                <Icon source={theme === 'dark' ? Icons.moon : Icons.sun}/>
             </ToolbarButton>
         </Toolbar>
     </div> 

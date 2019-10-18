@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon-moon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Editor" transform="translate(-670.000000, -720.000000)" fill="#111918" fill-rule="nonzero">
+            <g id="moon" transform="translate(670.000000, 720.000000)">
+                <path d="M15.600104,13.7850451 C13.2013371,19.1117352 6.299647,18.011097 8.29598297,19.467194 C9.61712198,20.4308127 11.2433796,21 13,21 C17.411,21 21,17.411 21,13 C21,9.49875977 18.7387782,6.5154143 15.600104,5.43373298 C14.7845531,5.15266968 17.9988708,8.45835494 15.600104,13.7850451 Z" id="Sicle"></path>
+                <g id="Group-2">
+                    <polygon id="Path" points="12 23 14 23 14 26 12 26"></polygon>
+                    <polygon id="Path" points="14 3 12 3 12 0 14 0"></polygon>
+                    <polygon id="Path" points="26 12 26 14 23 14 23 12"></polygon>
+                    <polygon id="Path" points="0 12 3 12 3 14 0 14"></polygon>
+                    <polygon id="Path" points="20.778 19.364 22.899 21.485 21.485 22.899 19.364 20.778"></polygon>
+                    <polygon id="Path" points="5.222 6.636 3.101 4.515 4.515 3.1 6.636 5.221"></polygon>
+                    <polygon id="Path" points="21.485 3.1 22.899 4.514 20.778 6.635 19.364 5.221"></polygon>
+                    <polygon id="Path" points="5.222 19.364 6.636 20.778 4.515 22.899 3.101 21.485"></polygon>
+                </g>
+                <path d="M13,5 C8.589,5 5,8.589 5,13 C5,17.411 8.589,21 13,21 C17.411,21 21,17.411 21,13 C21,8.589 17.411,5 13,5 Z" id="Path" fill-opacity="0.1"></path>
+            </g>
+        </g>
+    </g>
+</svg>

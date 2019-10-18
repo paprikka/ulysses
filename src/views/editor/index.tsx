@@ -15,7 +15,7 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
     const toggleUITimeout = 2000
-    const { text } = state
+    const { text, theme } = state
 
     const setText = (text: string) => dispatch({
         type: 'user:set-text',
@@ -64,6 +64,7 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
 
     return <EditorViewPresenter
         value={text}
+        theme={theme}
         isInputFocused={isInputFocused}
         isUIVisible={isUIVisible}
         
