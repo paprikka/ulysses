@@ -9,6 +9,16 @@
       name="description"
       content="Writing is Thinking"
     />
+    <script>
+      try {
+        const json = localStorage.getItem('ulysses::user-settings')
+        const config = JSON.parse(json)
+        const theme = 'dark'// config.theme
+        document.documentElement.className = `theme--${theme}`
+      } catch (err) {
+        console.log(err)
+      }
+    </script>
     <link rel="apple-touch-icon" href="logo192.png" />
     <!--
       TODO:
