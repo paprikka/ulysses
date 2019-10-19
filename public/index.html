@@ -10,14 +10,18 @@
       content="Writing is Thinking"
     />
     <script>
+    const preloadTheme = () => {
       try {
-        const json = localStorage.getItem('ulysses::user-settings')
-        const config = JSON.parse(json)
-        const theme = 'dark'// config.theme
-        document.documentElement.className = `theme--${theme}`
-      } catch (err) {
-        console.log(err)
+          const maybeConfig = localStorage.getItem('ulysses::user-settings')
+          if (!maybeConfig) return;
+          const config = JSON.parse(maybeConfig)
+          const theme = config.theme
+          document.documentElement.className = `theme--${theme}`
+        } catch (err) {
+          console.log(err)
+        }
       }
+      preloadTheme()
     </script>
     <link rel="apple-touch-icon" href="logo192.png" />
     <!--
