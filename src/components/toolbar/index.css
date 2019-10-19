@@ -5,8 +5,6 @@
     right: var(--page-margin);
     display: flex;
     transition: 1s opacity var(--default-anim-easing), 1s transform var(--default-anim-easing);
-    /* transform: translate(0, 50%); */
-
 }
 
 .toolbar .toolbar-button {
