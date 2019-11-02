@@ -6,14 +6,18 @@ import { EditorViewPresenter } from './presenter'
 import { fromEvent, timer } from 'rxjs'
 import { switchMap, mapTo, merge, distinctUntilChanged } from 'rxjs/operators'
 import { UserSettings, Action } from '../../reducers/user-settings';
+import { useFullscreen } from '../../utils/use-fullscreen'
 
 export interface EditorViewProps {
     state: UserSettings,
     dispatch: Dispatch<Action>
 }
+
 export const EditorView = ({state, dispatch} : EditorViewProps) => {
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
+    const [isFullscreen, toggleFullscreen] = useFullscreen(!!document.fullscreenElement)
+
     const toggleUITimeout = 2000
     const { text, theme } = state
 
@@ -67,11 +71,13 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
         theme={theme}
         isInputFocused={isInputFocused}
         isUIVisible={isUIVisible}
+        isFullscreen={isFullscreen}
         
         onChange={onInputChange}
         onDownloadClick={onDownloadClick}
         onRemoveClick={onRemoveClick}
         onToggleThemeClick={toggleTheme}
+        onToggleFullscreenClick={toggleFullscreen}
         onInputFocusedChange={setInputFocused}
     />
 }

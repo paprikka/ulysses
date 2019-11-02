@@ -32,6 +32,8 @@ interface EditorViewPresenterProps {
     onDownloadClick: () => void,
     onRemoveClick: () => void,
     onToggleThemeClick: () => void,
+    onToggleFullscreenClick: () => void,
+    isFullscreen: boolean,
     isUIVisible: boolean
 }
 export const EditorViewPresenter = ({
@@ -43,6 +45,8 @@ export const EditorViewPresenter = ({
     onDownloadClick,
     onRemoveClick,
     onToggleThemeClick,
+    onToggleFullscreenClick,
+    isFullscreen,
     isUIVisible
 } : EditorViewPresenterProps) => {
     const inputEl: React.MutableRefObject<HTMLTextAreaElement | null> = useRef(null)
@@ -109,6 +113,9 @@ export const EditorViewPresenter = ({
             <Spacer/>
             <ToolbarButton onClick={onToggleThemeClick}>
                 <Icon source={theme === 'dark' ? Icons.moon : Icons.sun}/>
+            </ToolbarButton>
+            <ToolbarButton onClick={onToggleFullscreenClick}>
+                <Icon source={isFullscreen ? Icons.zoomOut : Icons.zoomIn}/>
             </ToolbarButton>
         </Toolbar>
     </div> 
