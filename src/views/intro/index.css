@@ -20,7 +20,7 @@
 }
 
 .intro--exiting {
-    animation: introFadeIn var(--total-exit-anim-duration) 0s ease-in reverse;
+    animation: introFadeIn var(--total-exit-anim-duration) .9s ease-in reverse;
 }
 .intro--exiting .intro__content > * {
     animation:
@@ -68,7 +68,7 @@
     font-family: var(--font-base);
     color: var(--font-color);
 
-    max-width: 20rem;
+    max-width: 25rem;
 }
 
 
