@@ -1,0 +1,107 @@
+.intro {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: calc(var(--ru) * 2rem);
+    background: var(--page-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: introFadeIn 1s 0s ease-in both;
+
+    --segment-anim-duration: .9s;
+    --segment-anim-step: .2;
+    --total-exit-anim-duration: calc(6 * var(--segment-anim-duration));
+
+}
+
+.intro--exiting {
+    animation: introFadeIn var(--total-exit-anim-duration) 0s ease-in reverse;
+}
+.intro--exiting .intro__content > * {
+    animation:
+        introElementExit
+        var(--segment-anim-duration)
+        var(--segment-anim-duration)
+        ease-out both;
+}
+.intro--exiting .intro__content > :nth-child(1) {
+    animation-delay: 0;
+}
+
+.intro--exiting .intro__content > :nth-child(2) {
+    animation-delay:
+        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (2 - 1));
+}
+.intro--exiting .intro__content > :nth-child(3) {
+    animation-delay:
+        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (3 - 1));
+}
+.intro--exiting .intro__content > :nth-child(4) {
+    animation-delay:
+        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (4 - 1));
+}
+.intro--exiting .intro__content > :nth-child(5) {
+    animation-delay:
+        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (5 - 1));
+}
+
+
+@keyframes introFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes introElementExit {
+    from { opacity: 1; }
+    to { opacity: 0; filter: blur(50px)}
+}
+
+.intro__content {
+
+    line-height: calc(var(--ru) * 1rem);
+    font-size: 1rem;
+    font-family: var(--font-base);
+    color: var(--font-color);
+
+    max-width: 20rem;
+}
+
+
+.intro__content p {
+    margin: 0 0 calc(var(--ru) * 1rem);
+}
+.intro__header {
+    text-align: center;
+    margin-bottom: calc(var(--ru) * 1rem);;
+}
+
+.intro__header img {
+    vertical-align: bottom;
+}
+
+.intro__cta {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+
+    background: none;
+    border: 2px solid var(--font-color);
+    color: var(--font-color);
+    font-size: 1rem;
+    line-height: calc(var(--ru) * 1rem);
+    padding: 0 calc(var(--ru) * .5rem);
+}
+
+.intro__cta:active {
+    background: var(--font-color);
+    border: 2px solid var(--page-color);
+    color: var(--page-color);
+}
+
+.intro__footer {
+    text-align: center;
+}

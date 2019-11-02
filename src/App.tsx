@@ -5,10 +5,12 @@ import { EditorView } from './views/editor'
 import { userSettingsReducer, UserSettings } from './reducers/user-settings'
 import { Theme } from './components/theme';
 import { Sync } from './components/sync';
+import { IntroView } from './views/intro';
 
 const defaultState: UserSettings = {
   theme: 'default',
-  text: ''
+  text: '',
+  isIntroVisible: true
 }
 
 const getInitialState = (defaultState: UserSettings) => {
@@ -33,7 +35,11 @@ function App() {
     <div className="app">
       <Sync state={state} />
       <Theme theme={state.theme} />
-      <EditorView state={state} dispatch={dispatch} />
+      {
+        state.isIntroVisible
+          ? <IntroView dispatch={dispatch}/>
+          : <EditorView state={state} dispatch={dispatch} />
+      }
     </div>
   );
 }
