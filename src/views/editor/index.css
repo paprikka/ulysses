@@ -16,7 +16,7 @@
 .editor__content {
     width: 100%;
     height: calc(var(--ru) * 5rem);
-    max-width: 30rem;
+    max-width: 25rem;
 
     position: relative;
     top: calc(var(--ru) * -2.5rem)
