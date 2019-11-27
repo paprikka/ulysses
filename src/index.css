@@ -1,9 +1,9 @@
 :root {
   --ru: 1.6;
-  --font-size: 20px;
+  --font-size: 22px;
   --page-margin: calc(var(--ru) * 1rem);
   
-  --font-base: Georgia, 'Times New Roman', Times, serif;
+  --font-base: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
 
   --default-anim-easing: cubic-bezier(0.190, 1.000, 0.220, 1.000)
 }
@@ -19,6 +19,9 @@ body, html {
 
 html {
   font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
 }
 body {
   margin: 0;
