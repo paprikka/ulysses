@@ -3,6 +3,7 @@
     --page-color-transparent: #fafafa99;
 
     --font-color: #333;
+    --link-color: #e00202;
 }
 
 .theme--dark {
@@ -10,4 +11,5 @@
     --page-color-transparent: #21212199;
 
     --font-color: #E3DAC4;
+    --link-color: #e00202;
 }

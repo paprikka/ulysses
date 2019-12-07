@@ -103,6 +103,17 @@ export const EditorViewPresenter = ({
             'editor__word-count': true,
             'editor__word-count--active': isUIVisible
         })}>{wordCount}</span>
+
+        <nav className={classNames({
+            'editor__footer': true,
+            'editor__footer--active': isUIVisible
+        })}>
+            <ul>
+                <li><a href='https://sonnet.io/posts/ulysses' target='_blank'>About Ulysses</a></li>
+                <li><a href='https://sonnet.io' target='_blank'>Contact</a></li>
+            </ul>
+        </nav>
+
         <Toolbar isVisible={isUIVisible}>
             <ToolbarButton onClick={onDownloadClick}>
                 <Icon source={Icons.save}/>

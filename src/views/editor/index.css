@@ -88,3 +88,45 @@
 .editor__word-count--active {
     opacity: .5;
 }
+
+
+.editor__footer {
+    position: absolute;
+    left: var(--page-margin);
+    bottom: var(--page-margin);
+
+    opacity: 0;
+    transition: .4s opacity;
+}
+
+.editor__footer ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.editor__footer li {
+    display: inline-block;
+    font-size: .75rem;
+}
+
+.editor__footer a {
+    transition: .2s;
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.editor__footer li:not(:first-child)::before {
+    content: '·';
+    display: inline-block;
+    width: 1rem;
+    text-align: center;
+}
+
+.editor__footer a:hover {
+    color: var(--link-color);
+}
+
+.editor__footer--active {
+    opacity: .5;
+}
