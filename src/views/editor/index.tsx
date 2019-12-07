@@ -3,8 +3,6 @@ import './index.css';
 import { getFilename } from './get-filename'
 import { download } from './download'
 import { EditorViewPresenter } from './presenter'
-import { fromEvent, timer } from 'rxjs'
-import { switchMap, mapTo, merge, distinctUntilChanged } from 'rxjs/operators'
 import { UserSettings, Action } from '../../reducers/user-settings';
 import { useFullscreen } from '../../utils/use-fullscreen'
 
@@ -47,22 +45,16 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
 
     useEffect(
         () => {
-            const mouseMove$ = fromEvent(document.body, 'mousemove')
+            let timer: NodeJS.Timeout
+            const onMouseMove = () => {
+                if(timer) clearTimeout(timer)
+                timer = setTimeout( () => setIsUIVisible(false), toggleUITimeout )
+                setIsUIVisible(true)
+            }
 
-            const initialHide$ = timer(toggleUITimeout).pipe( mapTo(false) )
-            const hide$ = mouseMove$.pipe(
-                switchMap( () => timer(toggleUITimeout) ),
-                mapTo(false)
-            )
-            const show$ = mouseMove$.pipe( mapTo(true) )
-            
-            const sub = hide$
-                .pipe(
-                    merge(initialHide$, show$),
-                    distinctUntilChanged()
-                ).subscribe(setIsUIVisible)
+            document.body.addEventListener('mousemove', onMouseMove)
 
-            return () => sub.unsubscribe()
+            return () => document.body.removeEventListener('mousemove', onMouseMove)
         }, []
     )
 
