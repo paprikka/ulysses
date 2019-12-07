@@ -1,11 +1,22 @@
 :root {
   --ru: 1.6;
   --font-size: 22px;
-  --page-margin: calc(var(--ru) * 1rem);
+  --page-margin-mobile: calc(var(--ru) * .5rem);
+  --page-margin-desktop: calc(var(--ru) * 1rem);
   
   --font-base: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
 
   --default-anim-easing: cubic-bezier(0.190, 1.000, 0.220, 1.000)
+}
+
+:root {
+  --page-margin: var(--page-margin-mobile);
+}
+
+@media all and (min-width: 400px) {
+  :root {
+    --page-margin: var(--page-margin-desktop);
+  }
 }
 
 * {

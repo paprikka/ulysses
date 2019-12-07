@@ -5,7 +5,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: calc(var(--ru) * 2rem);
+    padding: var(--page-margin);
     background: var(--page-color);
     display: flex;
     align-items: center;
