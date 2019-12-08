@@ -46,15 +46,15 @@ export const EditorView = ({state, dispatch} : EditorViewProps) => {
     useEffect(
         () => {
             let timer: NodeJS.Timeout
-            const onMouseMove = () => {
+            const update = () => {
                 if(timer) clearTimeout(timer)
                 timer = setTimeout( () => setIsUIVisible(false), toggleUITimeout )
                 setIsUIVisible(true)
             }
 
-            document.body.addEventListener('mousemove', onMouseMove)
-
-            return () => document.body.removeEventListener('mousemove', onMouseMove)
+            document.body.addEventListener('mousemove', update)
+            update()
+            return () => document.body.removeEventListener('mousemove', update)
         }, []
     )
 
