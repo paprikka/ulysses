@@ -4,7 +4,7 @@ import {
     ChangeThemeAction,
     SetTextAction,
     HideIntroAction,
-} from './user-settings'
+} from '.'
 
 const getState: () => UserSettings = () => ({
     theme: 'default',

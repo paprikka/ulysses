@@ -21,6 +21,12 @@ export interface UserSettings {
     isIntroVisible: boolean
 }
 
+export const defaultState: UserSettings = {
+    theme: 'default',
+    text: '',
+    isIntroVisible: true,
+}
+
 export const userSettingsReducer = (state: UserSettings, action: Action) => {
     switch (action.type) {
         case 'user:change-theme':
