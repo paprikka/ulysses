@@ -74,7 +74,7 @@ export const EditorViewPresenter = ({
 
     return (
         <div className='editor'>
-            <div className='editor__content'>
+            <div className='editor__content' data-testid='editor-content'>
                 {isInputFocused ? null : (
                     <TypingDetector onStartedTyping={focus} />
                 )}
