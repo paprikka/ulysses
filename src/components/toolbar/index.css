@@ -4,11 +4,12 @@
     left: var(--page-margin);
     right: var(--page-margin);
     display: flex;
-    transition: 1s opacity var(--default-anim-easing), 1s transform var(--default-anim-easing);
+    transition: 1s opacity var(--default-anim-easing),
+        1s transform var(--default-anim-easing);
 }
 
 .toolbar .toolbar-button {
-    margin: 0 .5rem
+    margin: 0 0.5rem;
 }
 
 .toolbar .toolbar-button:first-child {
@@ -19,8 +20,7 @@
     margin-right: 0;
 }
 
-
 .toolbar--hidden:not(:hover) {
     opacity: 0;
-    transform: translate(0, -.75rem);
+    transform: translate(0, -0.75rem);
 }

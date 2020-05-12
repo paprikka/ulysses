@@ -13,5 +13,5 @@ export const Icons = {
     settings,
     remove,
     zoomIn,
-    zoomOut
+    zoomOut,
 }

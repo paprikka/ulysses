@@ -4,13 +4,12 @@
     font-size: 1.5rem;
     padding: 0;
 
-    opacity: .5;
+    opacity: 0.5;
 
-    transition: .3s opacity, .3s transform;
+    transition: 0.3s opacity, 0.3s transform;
 
     cursor: pointer;
 }
-
 
 .toolbar-button:hover {
     opacity: 1;
@@ -18,7 +17,7 @@
 
 .toolbar-button:active {
     opacity: 1;
-    transform: scale(.95);
+    transform: scale(0.95);
 }
 
 .toolbar-button:focus {

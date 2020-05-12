@@ -13,56 +13,63 @@
 
     animation: introFadeIn 1s 0s ease-in both;
 
-    --segment-anim-duration: .9s;
-    --segment-anim-step: .2;
+    --segment-anim-duration: 0.9s;
+    --segment-anim-step: 0.2;
     --total-exit-anim-duration: calc(6 * var(--segment-anim-duration));
-
 }
 
 .intro--exiting {
-    animation: introFadeIn var(--total-exit-anim-duration) .9s ease-in reverse;
+    animation: introFadeIn var(--total-exit-anim-duration) 0.9s ease-in reverse;
 }
 .intro--exiting .intro__content > * {
-    animation:
-        introElementExit
-        var(--segment-anim-duration)
-        var(--segment-anim-duration)
-        ease-out both;
+    animation: introElementExit var(--segment-anim-duration)
+        var(--segment-anim-duration) ease-out both;
 }
 .intro--exiting .intro__content > :nth-child(1) {
     animation-delay: 0;
 }
 
 .intro--exiting .intro__content > :nth-child(2) {
-    animation-delay:
-        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (2 - 1));
+    animation-delay: calc(
+        var(--segment-anim-duration) * var(--segment-anim-step) * (2 - 1)
+    );
 }
 .intro--exiting .intro__content > :nth-child(3) {
-    animation-delay:
-        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (3 - 1));
+    animation-delay: calc(
+        var(--segment-anim-duration) * var(--segment-anim-step) * (3 - 1)
+    );
 }
 .intro--exiting .intro__content > :nth-child(4) {
-    animation-delay:
-        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (4 - 1));
+    animation-delay: calc(
+        var(--segment-anim-duration) * var(--segment-anim-step) * (4 - 1)
+    );
 }
 .intro--exiting .intro__content > :nth-child(5) {
-    animation-delay:
-        calc(var(--segment-anim-duration) * var(--segment-anim-step) * (5 - 1));
+    animation-delay: calc(
+        var(--segment-anim-duration) * var(--segment-anim-step) * (5 - 1)
+    );
 }
 
-
 @keyframes introFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes introElementExit {
-    from { opacity: 1; }
-    to { opacity: 0; filter: blur(50px)}
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        filter: blur(50px);
+    }
 }
 
 .intro__content {
-
     line-height: calc(var(--ru) * 1rem);
     font-size: 1rem;
     font-family: var(--font-base);
@@ -71,13 +78,12 @@
     max-width: 25rem;
 }
 
-
 .intro__content p {
     margin: 0 0 calc(var(--ru) * 1rem);
 }
 .intro__header {
     text-align: center;
-    margin-bottom: calc(var(--ru) * 1rem);;
+    margin-bottom: calc(var(--ru) * 1rem);
 }
 
 .intro__header img {
@@ -93,7 +99,7 @@
     color: var(--font-color);
     font-size: 1rem;
     line-height: calc(var(--ru) * 1rem);
-    padding: 0 calc(var(--ru) * .5rem);
+    padding: 0 calc(var(--ru) * 0.5rem);
 }
 
 .intro__cta:active {

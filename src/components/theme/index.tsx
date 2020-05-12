@@ -6,12 +6,9 @@ export interface ThemeProps {
     theme: UserSettingsTheme
 }
 export const Theme = ({ theme }: ThemeProps) => {
-    useEffect(
-        () => {
-            document.documentElement.className = `theme--${theme}`
-        },
-        [ theme ]
-    )
-    
+    useEffect(() => {
+        document.documentElement.className = `theme--${theme}`
+    }, [theme])
+
     return null
 }
