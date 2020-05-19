@@ -32,7 +32,7 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
         if (isUIVisible) setIsUIVisible(false)
     }
 
-    const onDownloadClick = () => download(getFilename(), text)
+    const onDownloadClick = () => download(getFilename(), text.trim())
 
     const onRemoveClick = () => {
         if (window.confirm('Are you sure you want to remove this note?')) {

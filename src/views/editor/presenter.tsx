@@ -132,7 +132,7 @@ export const EditorViewPresenter = ({
             </nav>
 
             <Toolbar isVisible={isUIVisible}>
-                <ToolbarButton onClick={onDownloadClick}>
+                <ToolbarButton label='Download notes' onClick={onDownloadClick}>
                     <Icon source={Icons.save} />
                 </ToolbarButton>
                 <ToolbarButton onClick={onRemoveClick}>
