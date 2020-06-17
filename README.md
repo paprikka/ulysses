@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 
-    $ nvm use # set the requried node version
+    $ nvm use # set the required node version
     $ npm i   # install dependencies
 
 ## Develop
