@@ -25,14 +25,15 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test:e2e": "cypress open",
-        "test:e2e:pre-commit": "CI=true npm t && cypress run",
+        "pre-commit": "npm run lint && npm t && cypress run",
+        "lint": "npx prettier --check src",
         "eject": "react-scripts eject",
         "deploy": "npm run build && aws s3 sync build s3://ulysses-app/"
     },
 
     "husky": {
         "hooks": {
-            "pre-commit": "npm run test:e2e:pre-commit"
+            "pre-commit": "CI=true npm run pre-commit"
         }
     },
 
