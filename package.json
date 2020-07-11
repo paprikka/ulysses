@@ -25,18 +25,18 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test:e2e": "cypress open",
-        "pre-commit": "npm run lint && npm t && cypress run",
+        "test:e2e:chromium": "npx cypress run",
+        "test:e2e:firefox": "npx cypress run --browser firefox --headless",
+        "pre-commit": "npm run lint && npm t && npm run test:e2e:chromium && npm run test:e2e:firefox",
         "lint": "npx prettier --check src",
         "eject": "react-scripts eject",
         "deploy": "npm run build && aws s3 sync build s3://ulysses-app/"
     },
-
     "husky": {
         "hooks": {
             "pre-commit": "CI=true npm run pre-commit"
         }
     },
-
     "eslintConfig": {
         "extends": "react-app"
     },
