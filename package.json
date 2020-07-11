@@ -25,9 +25,17 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "test:e2e": "cypress open",
+        "test:e2e:pre-commit": "CI=true npm t && cypress run",
         "eject": "react-scripts eject",
         "deploy": "npm run build && aws s3 sync build s3://ulysses-app/"
     },
+
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run test:e2e:pre-commit"
+        }
+    },
+
     "eslintConfig": {
         "extends": "react-app"
     },
@@ -48,6 +56,7 @@
         "@testing-library/user-event": "^10.2.0",
         "@types/classnames": "^2.2.9",
         "cypress": "^4.10.0",
-        "http-server": "^0.11.1"
+        "http-server": "^0.11.1",
+        "husky": "^4.2.5"
     }
 }
