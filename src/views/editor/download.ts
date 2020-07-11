@@ -9,7 +9,7 @@ export const download = (filename: string, text: string) => {
     element.style.display = 'none'
     document.body.appendChild(element)
 
-    element.click()
+    if (!('Cypress' in window)) element.click()
 
     document.body.removeChild(element)
 }

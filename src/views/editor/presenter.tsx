@@ -79,6 +79,7 @@ export const EditorViewPresenter = ({
                     <TypingDetector onStartedTyping={focus} />
                 )}
                 <textarea
+                    data-testid='editor-input'
                     onSelect={preventSelection}
                     onCopy={preventEvent}
                     onPaste={preventEvent}

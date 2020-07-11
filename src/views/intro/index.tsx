@@ -34,7 +34,11 @@ export const IntroView = ({ dispatch }: IntroViewProps) => {
                 </p>
 
                 <div className='intro__footer'>
-                    <button onClick={onExitClick} className='intro__cta'>
+                    <button
+                        aria-label='Start'
+                        onClick={onExitClick}
+                        className='intro__cta'
+                    >
                         Start
                     </button>
                 </div>
