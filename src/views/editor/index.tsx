@@ -5,7 +5,7 @@ import { download } from './download'
 import { EditorViewPresenter } from './presenter'
 import { UserSettings, Action } from '../../reducers/user-settings'
 import { useFullscreen } from '../../utils/use-fullscreen'
-
+import { Fullscreen } from '../../utils/fullscreen'
 export interface EditorViewProps {
     state: UserSettings
     dispatch: Dispatch<Action>
@@ -15,7 +15,7 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
     const [isInputFocused, setInputFocused] = useState(true)
     const [isUIVisible, setIsUIVisible] = useState(true)
     const [isFullscreen, toggleFullscreen] = useFullscreen(
-        !!document.fullscreenElement
+        Fullscreen.isFullscreen()
     )
 
     const toggleUITimeout = 2000
