@@ -1,11 +1,13 @@
-import React, { useState, useEffect, Dispatch } from 'react'
-import './index.css'
-import { getFilename } from './get-filename'
-import { download } from './download'
-import { EditorViewPresenter } from './presenter'
-import { UserSettings, Action } from '../../reducers/user-settings'
-import { useFullscreen } from '../../utils/use-fullscreen'
+import React, { Dispatch, useEffect, useState } from 'react'
+import { Action, UserSettings } from '../../reducers/user-settings'
 import { Fullscreen } from '../../utils/fullscreen'
+import { trackVisits } from '../../utils/track-visits'
+import { useFullscreen } from '../../utils/use-fullscreen'
+import { download } from './download'
+import { getFilename } from './get-filename'
+import './index.css'
+import { EditorViewPresenter } from './presenter'
+
 export interface EditorViewProps {
     state: UserSettings
     dispatch: Dispatch<Action>
@@ -53,7 +55,7 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
             timer = setTimeout(() => setIsUIVisible(false), toggleUITimeout)
             setIsUIVisible(true)
         }
-
+        trackVisits()
         document.body.addEventListener('mousemove', update)
         update()
         return () => document.body.removeEventListener('mousemove', update)

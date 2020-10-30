@@ -7,6 +7,8 @@ import { EditorView } from '.'
 import { download } from './download'
 import { getFilename } from './get-filename'
 
+jest.mock('../../utils/track-visits', () => ({ trackVisits: jest.fn() }))
+
 jest.mock('./download', () => ({
     download: jest.fn(),
 }))
