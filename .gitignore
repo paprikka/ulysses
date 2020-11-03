@@ -28,3 +28,4 @@ yarn-error.log*
 firebase-credentials.json
 
 cypress/screenshots/
+.vscode
