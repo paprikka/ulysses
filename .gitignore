@@ -30,4 +30,3 @@ firebase-credentials.json
 
 cypress/screenshots/
 .vscode
-dist/

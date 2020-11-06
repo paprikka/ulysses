@@ -24,8 +24,8 @@
     "scripts": {
         "start": "parcel dev src/index.html",
         "serve:dev": "npm run vercel -- dev",
-        "serve:prod": "http-server dist -p3000",
-        "build": "parcel build src/index.html",
+        "serve:prod": "http-server build -p3000",
+        "build": "parcel build src/index.html --out-dir build",
         "test": "jest --config=jest.config.js src",
         "test:e2e": "cypress open",
         "test:e2e:chromium": "npx cypress run",
