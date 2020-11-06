@@ -1,5 +1,5 @@
 it('should allow user to edit and save text', () => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:1234')
 
     cy.get('[aria-label="Start"]').click()
 

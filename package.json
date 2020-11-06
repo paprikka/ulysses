@@ -18,22 +18,20 @@
         "http-server": "^0.12.3",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
-        "react-scripts": "3.4.1",
         "typescript": "^3.8.3",
         "uuid": "^8.3.1"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "parcel dev src/index.html",
         "serve:dev": "npm run vercel -- dev",
-        "serve:prod": "http-server build -p3000",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
+        "serve:prod": "http-server dist -p3000",
+        "build": "parcel build src/index.html",
+        "test": "jest --config=jest.config.js src",
         "test:e2e": "cypress open",
         "test:e2e:chromium": "npx cypress run",
         "test:e2e:firefox": "npx cypress run --browser firefox --headless",
         "pre-commit": "npm run lint && npm t && npm run test:e2e:chromium && npm run test:e2e:firefox",
         "lint": "prettier --check src",
-        "eject": "react-scripts eject",
         "vercel": "vercel"
     },
     "husky": {
@@ -42,7 +40,7 @@
         }
     },
     "eslintConfig": {
-        "extends": "react-app"
+        "extends": "prettier"
     },
     "browserslist": {
         "production": [
@@ -62,9 +60,13 @@
         "@types/classnames": "^2.2.9",
         "@types/express": "^4.17.8",
         "cypress": "^4.10.0",
+        "eslint-config-prettier": "^6.15.0",
         "http-server": "^0.11.1",
         "husky": "^4.2.5",
+        "jest": "^26.6.3",
+        "parcel-bundler": "^1.12.4",
         "prettier": "^2.1.2",
+        "ts-jest": "^26.4.3",
         "vercel": "^20.1.2"
     }
 }

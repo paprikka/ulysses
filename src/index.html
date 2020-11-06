@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="./favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#333" />
+        <meta name="description" content="Writing is Thinking" />
+        <script>
+            const preloadTheme = () => {
+                try {
+                    const maybeConfig = localStorage.getItem(
+                        'ulysses::user-settings'
+                    )
+                    if (!maybeConfig) return
+                    const config = JSON.parse(maybeConfig)
+                    const theme = config.theme
+                    document.documentElement.className = `theme--${theme}`
+                } catch (err) {
+                    console.log(err)
+                }
+            }
+            preloadTheme()
+        </script>
+        <link rel="apple-touch-icon" href="./favicon@192.png" />
+        <!--
+      TODO:
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+        <link rel="manifest" href="./manifest.json" />
+        <link
+            href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+            rel="stylesheet"
+        />
+        <title>Ulysses</title>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+        <script src="./index.tsx"></script>
+    </body>
+</html>

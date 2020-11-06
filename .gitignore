@@ -25,7 +25,9 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 .vercel
+.cache
 firebase-credentials.json
 
 cypress/screenshots/
 .vscode
+dist/
