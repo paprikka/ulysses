@@ -1,0 +1,7 @@
+{
+  "name": "ulysses",
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "@homer-mongodb-uri"
+  }
+}
