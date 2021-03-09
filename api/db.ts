@@ -1,15 +1,19 @@
-import { MongoClient } from 'mongodb'
+import { Db, MongoClient } from 'mongodb'
 
 const uri = process.env.MONGODB_URI
 
-const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
 
 
-client.connect((err) => {
-    const collection = client.db('test').collection('devices')
-    // perform actions on the collection object
-    client.close()
-})
+let cachedDB: Db = null
+export const getDB = async () => {
+    if(cachedDB) return cachedDB
+    const client = new MongoClient(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+
+    await client.connect()
+    
+    cachedDB = client.db('homer-events')
+    return cachedDB
+}
