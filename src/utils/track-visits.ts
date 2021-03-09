@@ -1,5 +1,3 @@
-import { fetch } from './fetch'
-
 export const trackVisits = () =>
     fetch('/api/hello', {
         // adding so we don't store any cookies
