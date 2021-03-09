@@ -23,4 +23,5 @@
 .toolbar--hidden:not(:hover) {
     opacity: 0;
     transform: translate(0, -0.75rem);
+    filter: blur(4px);
 }
