@@ -5,4 +5,4 @@ export const trackVisits = () =>
         // but I want to know just enough to make improvements in
         // the app.
         credentials: 'omit',
-    })
+    }).catch()

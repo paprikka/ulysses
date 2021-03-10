@@ -22,16 +22,18 @@
         "uuid": "^8.3.1"
     },
     "scripts": {
-        "start": "parcel dev src/index.html",
+        "start": "parcel dev src/index.html --out-dir build",
         "serve:dev": "npm run vercel -- dev",
         "serve:prod": "http-server build -p3000",
         "build": "parcel build src/index.html --out-dir build",
+        "postbuild": "workbox generateSW",
         "test": "jest --config=jest.config.js src",
         "test:e2e": "cypress open",
         "test:e2e:chromium": "npx cypress run",
         "test:e2e:firefox": "npx cypress run --browser firefox --headless",
         "pre-commit": "npm run lint && npm t && npm run test:e2e:chromium && npm run test:e2e:firefox",
         "lint": "prettier --check src",
+        "format": "prettier --write src",
         "vercel": "vercel"
     },
     "husky": {
@@ -60,7 +62,7 @@
         "@types/classnames": "^2.2.9",
         "@types/express": "^4.17.8",
         "@types/mongodb": "^3.6.9",
-        "cypress": "^4.10.0",
+        "cypress": "^6.6.0",
         "eslint-config-prettier": "^6.15.0",
         "http-server": "^0.12.3",
         "husky": "^4.2.5",
@@ -68,6 +70,7 @@
         "parcel-bundler": "^1.12.4",
         "prettier": "^2.1.2",
         "ts-jest": "^26.4.3",
-        "vercel": "^20.1.4"
+        "vercel": "^20.1.4",
+        "workbox-cli": "^6.1.1"
     }
 }
