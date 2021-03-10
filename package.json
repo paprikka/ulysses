@@ -22,10 +22,10 @@
         "uuid": "^8.3.1"
     },
     "scripts": {
-        "start": "parcel dev src/index.html --out-dir build",
+        "start": "parcel dev src/index.html --out-dir public",
         "serve:dev": "npm run vercel -- dev",
-        "serve:prod": "http-server build -p3000",
-        "build": "parcel build src/index.html --out-dir build",
+        "serve:prod": "http-server public -p3000",
+        "build": "parcel build src/index.html --out-dir public",
         "postbuild": "workbox generateSW",
         "test": "jest --config=jest.config.js src",
         "test:e2e": "cypress open",
