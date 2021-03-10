@@ -121,7 +121,7 @@ export const EditorViewPresenter = ({
                             href='https://sonnet.io/posts/ulysses'
                             target='_blank'
                         >
-                            About Ulysses
+                            About Ensō
                         </a>
                     </li>
                     <li>

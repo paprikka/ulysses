@@ -2,7 +2,7 @@ import React, { Dispatch, useState } from 'react'
 import { Action } from '../../reducers/user-settings'
 import classNames from 'classnames'
 import './index.css'
-import logoURL from './logo.svg'
+import logoURL from './logo.jpg' 
 
 export interface IntroViewProps {
     dispatch: Dispatch<Action>
@@ -23,7 +23,7 @@ export const IntroView = ({ dispatch }: IntroViewProps) => {
         >
             <div className='intro__content'>
                 <header className='intro__header'>
-                    <img src={logoURL} alt='Ulysses' />
+                    <img src={logoURL} alt='Ensō' />
                 </header>
                 <p>Write. Don’t edit.</p>
                 <p>Let your thoughts flow freely.</p>

@@ -87,6 +87,7 @@
 }
 
 .intro__header img {
+    max-width: 5rem;
     vertical-align: bottom;
 }
 
