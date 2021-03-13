@@ -1,19 +1,19 @@
 {
-    "short_name": "Ulysses",
-    "name": "Ulysses",
+    "short_name": "Ensō",
+    "name": "Ensō",
     "icons": [
         {
-            "src": "favicon@64.png",
+            "src": "favicon@64.jpg",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/x-icon"
         },
         {
-            "src": "favicon@192.png",
+            "src": "favicon@192.jpg",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "favicon@512.png",
+            "src": "favicon@512.jpg",
             "type": "image/png",
             "sizes": "512x512"
         }
