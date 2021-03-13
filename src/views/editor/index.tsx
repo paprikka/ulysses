@@ -49,10 +49,13 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
         })
 
     useEffect(() => {
-        let timer: NodeJS.Timeout
+        let timer: number
         const update = () => {
-            if (timer) clearTimeout(timer)
-            timer = setTimeout(() => setIsUIVisible(false), toggleUITimeout)
+            if (timer) window.clearTimeout(timer)
+            timer = window.setTimeout(
+                () => setIsUIVisible(false),
+                toggleUITimeout
+            )
             setIsUIVisible(true)
         }
         trackVisits()
