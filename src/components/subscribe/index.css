@@ -19,7 +19,7 @@
     padding: 0 calc(var(--ru) * 0.5rem);
     margin-bottom: calc(var(--ru) * 0.5rem);
     border: 2px solid var(--color-border);
-    font-size: 1rem;
+    font-size: 0.75rem;
     flex: 1;
     min-width: 0;
     opacity: 0.6;
@@ -37,7 +37,7 @@
     background: var(--color-border);
     border: none;
     color: var(--page-color);
-    font-size: 1rem;
+    font-size: 0.75rem;
     line-height: calc(var(--ru) * 1.5rem);
     padding: 0 calc(var(--ru) * 0.5rem);
     margin-bottom: calc(var(--ru) * 0.5rem);
