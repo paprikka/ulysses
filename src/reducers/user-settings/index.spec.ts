@@ -1,15 +1,25 @@
+import { mocked } from 'ts-jest/utils'
 import {
     userSettingsReducer,
     UserSettings,
     ChangeThemeAction,
     SetTextAction,
     HideIntroAction,
+    HideMobileSupportWarningAction,
+    getDefaultState,
 } from '.'
 
-const getState: () => UserSettings = () => ({
+import { getIsMobile } from '../../utils/is-mobile'
+jest.mock('../../utils/is-mobile', () => ({
+    getIsMobile: jest.fn().mockReturnValue(false),
+}))
+
+const getState = (overrides: Partial<UserSettings> = {}): UserSettings => ({
     theme: 'default',
     text: '',
     isIntroVisible: true,
+    isMobileSupportWarningVisible: false,
+    ...overrides,
 })
 
 it('should change the theme', () => {
@@ -39,5 +49,37 @@ it('should hide the intro', () => {
     expect(userSettingsReducer(state, action)).toEqual({
         ...state,
         isIntroVisible: false,
+    })
+})
+
+it('should hide mobile support warning', () => {
+    const action: HideMobileSupportWarningAction = {
+        type: 'user:hide-mobile-support-warning',
+    }
+    const state = getState({ isMobileSupportWarningVisible: true })
+    expect(userSettingsReducer(state, action)).toEqual({
+        ...state,
+        isMobileSupportWarningVisible: false,
+    })
+})
+
+describe('getDefaultState()', () => {
+    it('should return the default state', () => {
+        expect(getDefaultState()).toMatchInlineSnapshot(`
+            Object {
+              "isIntroVisible": true,
+              "isMobileSupportWarningVisible": false,
+              "text": "",
+              "theme": "default",
+            }
+        `)
+    })
+
+    it('should return isMobileSupportWarningVisible === false for non-mobile browsers', () => {
+        mocked(getIsMobile).mockReturnValueOnce(true)
+        expect(getDefaultState().isMobileSupportWarningVisible).toBe(true)
+
+        mocked(getIsMobile).mockReturnValueOnce(false)
+        expect(getDefaultState().isMobileSupportWarningVisible).toBe(false)
     })
 })

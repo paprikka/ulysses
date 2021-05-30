@@ -1,0 +1,66 @@
+.subscribe {
+    display: flex;
+    justify-content: stretch;
+    transition: 0.3s opacity;
+
+    --color-border: #212121;
+}
+
+.subscribe--is-active {
+    pointer-events: none;
+    opacity: 0.6;
+    user-select: none;
+}
+
+.subscribe__input {
+    padding: 0;
+    margin: 0;
+    line-height: calc(var(--ru) * 1.5rem);
+    padding: 0 calc(var(--ru) * 0.5rem);
+    margin-bottom: calc(var(--ru) * 0.5rem);
+    border: 2px solid var(--color-border);
+    font-size: 1rem;
+    flex: 1;
+    min-width: 0;
+    opacity: 0.6;
+}
+
+.subscribe__input:focus {
+    outline: none;
+    opacity: 1;
+}
+
+.subscribe__submitButton {
+    appearance: none;
+    font-family: Avenir Next, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background: var(--color-border);
+    border: none;
+    color: var(--page-color);
+    font-size: 1rem;
+    line-height: calc(var(--ru) * 1.5rem);
+    padding: 0 calc(var(--ru) * 0.5rem);
+    margin-bottom: calc(var(--ru) * 0.5rem);
+    transition: 0.2s background-color, 0.2s transform ease-in-out;
+    cursor: pointer;
+}
+
+.subscribe__submitButton:hover {
+    background-color: black;
+}
+
+.subscribe__submitButton[disabled] {
+    opacity: 0.7;
+}
+
+.subscribe__done {
+    line-height: calc(var(--ru) * 1.5rem);
+    padding: 0 calc(var(--ru) * 0.5rem);
+    margin-bottom: calc(var(--ru) * 0.5rem);
+
+    background: #212121;
+    color: var(--page-color);
+    font-family: Avenir Next, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
