@@ -35,38 +35,54 @@
         <div id="root"></div>
         <script src="./index.tsx"></script>
         <script>
-            if ('serviceWorker' in navigator) {
-                const sw = 'service-worker.js'
-                navigator.serviceWorker
-                    .register(sw)
-                    .then((registration) => {
-                        registration.onupdatefound = () => {
-                            const installingWorker = registration.installing
-                            if (installingWorker == null) {
-                                return
-                            }
-                            installingWorker.onstatechange = () => {
-                                if (installingWorker.state === 'installed') {
+            {
+                const log = console.log.bind(console, '[SW log]')
+
+                if ('serviceWorker' in navigator) {
+                    log('Checking for updates...')
+                    const sw = 'service-worker.js'
+                    navigator.serviceWorker
+                        .register(sw)
+                        .then((registration) => {
+                            log('registration', registration)
+                            registration.onupdatefound = () => {
+                                const installingWorker = registration.installing
+                                if (installingWorker == null) {
+                                    log('No active worker found.')
+                                    return
+                                }
+                                installingWorker.onstatechange = () => {
+                                    log(
+                                        'Worker state change: ' +
+                                            installingWorker.state
+                                    )
+                                    if (
+                                        installingWorker.state !== 'installed'
+                                    ) {
+                                        return
+                                    }
                                     if (navigator.serviceWorker.controller) {
-                                        console.log(
+                                        log(
                                             'New content is available and will be used when all ' +
                                                 'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
                                         )
                                     } else {
-                                        console.log(
+                                        log(
                                             'Content is cached for offline use.'
                                         )
                                     }
                                 }
                             }
-                        }
-                    })
-                    .catch((error) => {
-                        console.error(
-                            'Error during service worker registration:',
-                            error
-                        )
-                    })
+                        })
+                        .catch((error) => {
+                            console.error(
+                                'Error during service worker registration:',
+                                error
+                            )
+                        })
+                } else {
+                    log('No service worker support detected. k thx bye')
+                }
             }
         </script>
     </body>
