@@ -7,6 +7,7 @@ import { download } from './download'
 import { getFilename } from './get-filename'
 import './index.css'
 import { EditorViewPresenter } from './presenter'
+import { useClipboardCopy } from './use-clipboard-copy'
 
 export interface EditorViewProps {
     state: UserSettings
@@ -63,6 +64,8 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
         update()
         return () => document.body.removeEventListener('mousemove', update)
     }, [])
+
+    useClipboardCopy(text)
 
     return (
         <EditorViewPresenter
