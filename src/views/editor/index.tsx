@@ -1,4 +1,5 @@
 import React, { Dispatch, useEffect, useState } from 'react'
+import { showToast } from '../../components/toast'
 import { Action, UserSettings } from '../../reducers/user-settings'
 import { Fullscreen } from '../../utils/fullscreen'
 import { trackVisits } from '../../utils/track-visits'
@@ -65,7 +66,7 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
         return () => document.body.removeEventListener('mousemove', update)
     }, [])
 
-    useClipboardCopy(text)
+    useClipboardCopy(text, () => showToast('Copied to clipboard'))
 
     return (
         <EditorViewPresenter
