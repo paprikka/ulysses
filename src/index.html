@@ -36,8 +36,11 @@
         <script src="./index.tsx"></script>
         <script type="module">
             const log = console.log.bind(console, '[SW log]')
+            const isOfflineDisabled = new URLSearchParams(location.search).has(
+                'feat-offline-disabled'
+            )
 
-            if ('serviceWorker' in navigator) {
+            if ('serviceWorker' in navigator && !isOfflineDisabled) {
                 log('Checking for updates...')
                 const sw = 'service-worker.js'
                 navigator.serviceWorker
@@ -75,6 +78,8 @@
                             error
                         )
                     })
+            } else if (isOfflineDisabled) {
+                log('Offline support disabled. k thx ciao')
             } else {
                 log('No service worker support detected. k thx bye')
             }
