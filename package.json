@@ -30,7 +30,7 @@
         "test:e2e": "cypress open",
         "test:e2e:chromium": "npx cypress run",
         "test:e2e:firefox": "npx cypress run --browser firefox --headless",
-        "pre-commit": "npm run lint && npm t && npm run test:e2e:chromium && npm run test:e2e:firefox",
+        "pre-commit": "npm run lint && npm t && npm run test:e2e:chromium",
         "lint": "prettier --check src",
         "format": "prettier --write src",
         "vercel": "vercel"
