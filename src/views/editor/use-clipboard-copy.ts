@@ -14,7 +14,8 @@ export const useClipboardCopy = (
 
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
-            if (!(e.metaKey && e.code === 'KeyC')) return
+            const hasMetaOrControl = e.metaKey || e.ctrlKey
+            if (!(hasMetaOrControl && e.code === 'KeyC')) return
             if (!textRef.current) return
             if (typeof navigator.clipboard.writeText !== 'function') return
             navigator.clipboard
