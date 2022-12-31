@@ -9,6 +9,7 @@ import classNames from 'classnames'
 import { UserSettingsTheme } from '../../reducers/user-settings'
 import { Spacer } from '../../components/spacer'
 import { Toast } from '../../components/toast'
+import { FullscreenModal } from '../../components/fullscreen-modal'
 
 const preventEvent = (e: React.SyntheticEvent) => e.preventDefault()
 
@@ -150,7 +151,7 @@ export const EditorViewPresenter = ({
                     />
                 </ToolbarButton>
             </Toolbar>
-
+            <FullscreenModal />
             <Toast />
         </div>
     )
