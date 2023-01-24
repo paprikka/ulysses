@@ -130,6 +130,14 @@ export const EditorViewPresenter = ({
                             Contact
                         </a>
                     </li>
+                    <li>
+                        <a
+                            href='https://sonnet.gumroad.com/l/ewckz'
+                            target='_blank'
+                        >
+                            <strong>Get Ensō for Mac</strong>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
