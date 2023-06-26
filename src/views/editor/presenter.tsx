@@ -93,6 +93,7 @@ export const EditorViewPresenter = ({
                     placeholder='Start typing...'
                     value={getFormattedText(value)}
                     onChange={onInputChange}
+                    dir='auto'
                 />
                 <div className='editor__overlay'>
                     <span />
