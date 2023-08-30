@@ -51,8 +51,15 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
         })
 
     useEffect(() => {
+        trackVisits()
+    }, [])
+
+    useEffect(() => {
         let timer: number
-        const update = () => {
+        const update = (e?: PointerEvent) => {
+            // SHIFT seems to trigger a pointermove event in Safari
+            // https://twitter.com/rafalpast/status/1696947277955219473
+            if (e && (!e.movementX || e.movementY)) return
             if (timer) window.clearTimeout(timer)
             timer = window.setTimeout(
                 () => setIsUIVisible(false),
@@ -60,11 +67,24 @@ export const EditorView = ({ state, dispatch }: EditorViewProps) => {
             )
             setIsUIVisible(true)
         }
-        trackVisits()
-        document.body.addEventListener('mousemove', update)
+
+        document.body.addEventListener('pointermove', update)
+
         update()
-        return () => document.body.removeEventListener('mousemove', update)
+
+        return () => {
+            document.body.removeEventListener('pointermove', update)
+            window.clearTimeout(timer)
+        }
     }, [])
+
+    useEffect(() => {
+        const timer = window.setTimeout(() => {
+            setIsUIVisible(false)
+        }, 2000)
+
+        return () => window.clearTimeout(timer)
+    }, [text])
 
     useClipboardCopy(text, () => showToast('Copied to clipboard'))
 

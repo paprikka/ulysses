@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-
 import { noop } from '../../utils/noop'
 
 export const TypingDetector = ({ onStartedTyping = noop }) => {
@@ -8,7 +7,7 @@ export const TypingDetector = ({ onStartedTyping = noop }) => {
         document.body.addEventListener('keydown', handleTyping)
 
         return () => document.body.removeEventListener('keydown', handleTyping)
-    })
+    }, [onStartedTyping])
 
     return null
 }
