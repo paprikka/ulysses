@@ -56,10 +56,7 @@ export const EditorViewPresenter = ({
     const onInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
         onChange(e.currentTarget.value)
 
-    const focus = () => {
-        if (inputEl.current === null) return
-        inputEl.current.focus()
-    }
+    const focus = () => inputEl.current?.focus()
 
     useEffect(() => {
         if (inputEl.current === null) return
